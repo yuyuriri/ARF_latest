@@ -18,11 +18,19 @@ class detailViewController: UIViewController {
         UIImage(named: "roomfreglance3")!
     ]
     
+    let URL = [
+    NSURL(string: "https://shiro-shiro.jp/item/12716.html"),
+    NSURL(string: "https://francfranc.com/products/1105120176402"),
+    NSURL(string: "https://francfranc.com/products/1105120217709")
+         ]
+
+    
     var index = 0
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var imageImage: UIImageView!
+    @IBOutlet var URLButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +39,19 @@ class detailViewController: UIViewController {
         
         nameLabel.text = String(roomfreglance[index])
         priceLabel.text = String(price[index])
-//        imageImage.image = UIImage(data: imageImage)
+        //        選んだcellによってimageをそれぞれ変えたい
+        //        imageImage.image = UIImage(data: imageImage)
+//        URLButton.buttonType = String(URL[index])
+        
+//      nameLabelとpriceLabelの文字サイズを自動変更する
+        nameLabel.adjustsFontSizeToFitWidth = true
+        priceLabel.adjustsFontSizeToFitWidth = true
+        
+    }
+    
+    @IBAction func openURLTapped(_ sender: Any) {
+        guard let url = Foundation.URL(string: "https://shiro-shiro.jp/item/12716.html") else { return }
+        UIApplication.shared.open(url)
     }
     
 
