@@ -11,6 +11,14 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
     
+    let roomfreglance = [
+        "roomfreglance1",
+        "roomfreglance2",
+        "roomfreglance3"
+        ]
+    
+    var index = 0
+    
     @IBOutlet weak var mainSceneView: ARSCNView!
     
 //    @IBOutlet var heartButton: UIButton!
@@ -26,6 +34,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(index)
         
 //        data = saveData.object(forKey: "data") as! [Int]
         
@@ -105,10 +115,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func addItem(hitTestResult: ARHitTestResult) {
 
         // scene を作成
-        let scene = SCNScene(named: "Models.scnassets/tinkerCopy.scn")!
+        let scene = SCNScene(named: "Models.scnassets/\(roomfreglance[index]).scn")!
         
         //  node を作成
-        let node = (scene.rootNode.childNode(withName: "tinker copy", recursively: false))!
+        let node = (scene.rootNode.childNode(withName: roomfreglance[index], recursively: false))!
 //        let node = (scene.rootNode.childNode(withName: "roomfreglance2", recursively: false))!
         
         // 現実世界の座標を取得

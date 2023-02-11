@@ -34,8 +34,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Et0-y2-klh">
+                                <rect key="frame" x="213" y="529" width="112" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arkit" catalog="system" title="gotoAR!"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goar" id="0RB-om-iEC"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFH-D1-Aab">
-                                <rect key="frame" x="16" y="674" width="358" height="35"/>
+                                <rect key="frame" x="121" y="681" width="148" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
@@ -43,13 +53,6 @@
                                 <connections>
                                     <action selector="openURLTapped:" destination="zmo-xV-fJJ" eventType="touchUpInside" id="VqQ-Qw-HSg"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Et0-y2-klh">
-                                <rect key="frame" x="213" y="529" width="112" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arkit" catalog="system" title="gotoAR!"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9L5-5v-bp1"/>
@@ -62,12 +65,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="didTapheart" destination="zmo-xV-fJJ" eventType="touchUpInside" id="UUf-d7-Sri"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="URLButton" destination="HFH-D1-Aab" id="tjk-Sk-mTw"/>
+                        <outlet property="URLButton" destination="HFH-D1-Aab" id="wEe-Jc-C9N"/>
                         <outlet property="imageImage" destination="J8H-f0-ql3" id="2ag-Tl-ja7"/>
+                        <outlet property="latestheartButton" destination="g5T-lD-pdo" id="CRl-4K-X2E"/>
                         <outlet property="nameLabel" destination="bOI-Kp-vmf" id="ac0-sp-5lE"/>
                         <outlet property="priceLabel" destination="jJl-AK-RVx" id="3tg-u8-LHv"/>
                     </connections>
@@ -132,27 +139,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="zQK-KZ-eeo">
-                                <rect key="frame" x="50" y="725" width="290" height="35"/>
+                                <rect key="frame" x="50" y="725.66666666666663" width="290" height="34.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1B-id-sDv">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="34.333333333333336"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="B0U-BH-jRJ"/>
-                                            <constraint firstAttribute="height" constant="35" id="eUp-Rg-utQ"/>
-                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="go to AR"/>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="push" id="fQ3-6V-MZD"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbc-9w-pZ8">
-                                        <rect key="frame" x="190" y="0.0" width="100" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="Tus-LV-gV5"/>
-                                            <constraint firstAttribute="height" constant="35" id="s0e-Ow-qR5"/>
-                                        </constraints>
+                                        <rect key="frame" x="195" y="0.0" width="95" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="go to AR"/>
                                         <connections>
@@ -162,7 +158,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g0C-L3-giG">
-                                <rect key="frame" x="0.0" y="152" width="390" height="553"/>
+                                <rect key="frame" x="0.0" y="152" width="390" height="553.66666666666663"/>
                                 <color key="backgroundColor" red="0.84672772880000002" green="0.82372742889999995" blue="0.81176251170000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ca0-u5-ETb">
                                     <size key="itemSize" width="128" height="200"/>
@@ -199,9 +195,6 @@
                                     <segue destination="Xzj-Bs-fvd" kind="presentation" id="ju5-Kf-iEf"/>
                                 </connections>
                             </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="7Ox-lP-O0C">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -282,7 +275,6 @@
     <resources>
         <image name="arkit" catalog="system" width="128" height="125"/>
         <image name="heart" catalog="system" width="128" height="107"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -13,30 +13,30 @@ class roomfreglanceViewController: UIViewController, UICollectionViewDataSource,
     
     @IBOutlet var collectionViewFlowLayout: UICollectionViewFlowLayout!
     
-    var data: [Bool] = []
-    var saveData: UserDefaults = UserDefaults.standard
+//    var data: [Bool] = []
+//    var saveData: UserDefaults = UserDefaults.standard
 
     let roomfreglance = [
-        ["roomfreglance1", "ルームフレグランス1"],
-        ["roomfreglance2", "ルームフレグランス2"],
-        ["roomfreglance3", "ルームフレグランス3"]
+        ["roomfreglance1", "SAVON FRAGRANCE DIFFUSER LIQUID"],
+        ["roomfreglance2", "アルボル フレグランス ディフューザー"],
+        ["roomfreglance3", "デュオレディー ルームフレグランス"]
     ]
     
-    let initialdata: [Bool] = [false,false,false]
+//    let initialdata: [Bool] = [false,false,false]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 何も入ってない時だけ入れる
-        if ((saveData.object(forKey: "favorite") as? [Bool]) == nil) {
-            //  お気に入り更新
-            saveData.set(initialdata, forKey: "favorite")
-        }
-        
-        // 今のお気に入りを取得
-        data = saveData.object(forKey: "favorite") as! [Bool]
-        print("お気に入り")
-        print(data)
+//        // 何も入ってない時だけ入れる
+//        if ((saveData.object(forKey: "favorite") as? [Bool]) == nil) {
+//            //  お気に入り更新
+//            saveData.set(initialdata, forKey: "favorite")
+//        }
+//        
+//        // 今のお気に入りを取得
+//        data = saveData.object(forKey: "favorite") as! [Bool]
+//        print("お気に入り")
+//        print(data)
         
         
         
@@ -62,22 +62,10 @@ class roomfreglanceViewController: UIViewController, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath as IndexPath) as! CustomCellCollectionViewCell
         
-        if let cell = cell as? CustomCellCollectionViewCell {
-            cell.setupCell(imageName: roomfreglance[indexPath.row][0], labelText: roomfreglance[indexPath.row][1])
-        }
-        
-        // 今のお気に入りを取得
-       
-            
-            
-            data = saveData.object(forKey: "favorite") as! [Bool]
-            if data[indexPath.row] == true {
-                cell.heartButton.setImage(UIImage(systemName: "heart.fill"), for: .disabled)
-            } else {
-                cell.heartButton.setImage(UIImage(systemName: "heart"), for: .disabled)
-            }
-            
-            return cell
+//        if let cell = cell as? CustomCellCollectionViewCell {
+//            cell.setupCell(imageName: roomfreglance[indexPath.row][0], labelText: roomfreglance[indexPath.row][1])
+//        }
+        return cell
         
     }
     

@@ -15,7 +15,7 @@ class favoriteViewController: UIViewController, UITableViewDataSource {
     
     let roomfreglancedata = ["ルームフレグランス1", "ルームフレグランス2", "ルームフレグランス3"]
     
-    var data: [Bool] = []
+    var data: [Int] = []
     
     var saveData: UserDefaults = UserDefaults.standard
     
@@ -23,16 +23,17 @@ class favoriteViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         table.dataSource = self
         
-        data = saveData.object(forKey: "favorite") as! [Bool]
-        
+        data = saveData.object(forKey: "data") as! [Int]
+        print("お気に入り")
+        print(data)
         
         for i in 0 ..< roomfreglancedata.count{
-
-            if data[i]==true {
-
+            
+            if data[i]==1 {
+                
                 showdataArray.append(roomfreglancedata[i])
             }
         }

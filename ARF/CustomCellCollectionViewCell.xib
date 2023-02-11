@@ -18,8 +18,11 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ee9-KF-DOO">
                         <rect key="frame" x="5" y="40" width="350" height="435"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="435" id="y2j-bL-OtH"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFc-cZ-oNg">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="CFc-cZ-oNg">
                         <rect key="frame" x="10" y="10" width="340" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="wHF-D7-NUG"/>
@@ -28,17 +31,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="new-Pn-6YB">
-                        <rect key="frame" x="120" y="475" width="120" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="cBE-DA-UrX"/>
-                            <constraint firstAttribute="width" constant="120" id="w6R-je-mkr"/>
-                        </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="arkit" catalog="system" title="go to AR">
-                            <color key="baseForegroundColor" name="AccentColor"/>
-                        </buttonConfiguration>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udf-eP-KWQ">
                         <rect key="frame" x="309" y="0.0" width="51" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -50,16 +42,15 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="ee9-KF-DOO" secondAttribute="bottom" constant="45" id="6BW-p0-JaG"/>
                 <constraint firstItem="ee9-KF-DOO" firstAttribute="top" secondItem="CFc-cZ-oNg" secondAttribute="bottom" id="6xR-ff-AzC"/>
                 <constraint firstItem="ee9-KF-DOO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="9bc-XA-w2M"/>
                 <constraint firstItem="CFc-cZ-oNg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="CPQ-29-yMY"/>
                 <constraint firstItem="CFc-cZ-oNg" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="FmA-Qq-ijb"/>
                 <constraint firstAttribute="trailing" secondItem="CFc-cZ-oNg" secondAttribute="trailing" constant="10" id="NwM-qD-zw1"/>
-                <constraint firstItem="new-Pn-6YB" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="R53-jx-W0Z"/>
-                <constraint firstItem="new-Pn-6YB" firstAttribute="top" secondItem="ee9-KF-DOO" secondAttribute="bottom" id="UqH-MA-kzg"/>
+                <constraint firstItem="ee9-KF-DOO" firstAttribute="top" secondItem="CFc-cZ-oNg" secondAttribute="bottom" id="Qi5-Gq-D5i"/>
                 <constraint firstAttribute="trailing" secondItem="ee9-KF-DOO" secondAttribute="trailing" constant="5" id="lyE-xE-d81"/>
                 <constraint firstItem="CFc-cZ-oNg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="mrb-2c-tcJ"/>
-                <constraint firstAttribute="bottom" secondItem="new-Pn-6YB" secondAttribute="bottom" constant="10" id="yNg-2c-esS"/>
             </constraints>
             <size key="customSize" width="738" height="936"/>
             <connections>
@@ -71,10 +62,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="arkit" catalog="system" width="128" height="125"/>
         <image name="heart" catalog="system" width="128" height="107"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>
