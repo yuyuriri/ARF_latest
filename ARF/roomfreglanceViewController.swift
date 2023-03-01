@@ -14,7 +14,7 @@ class roomfreglanceViewController: UIViewController, UICollectionViewDataSource,
     @IBOutlet var collectionViewFlowLayout: UICollectionViewFlowLayout!
     
 //    var data: [Bool] = []
-//    var saveData: UserDefaults = UserDefaults.standard
+    var saveData: UserDefaults = UserDefaults.standard
 
     let roomfreglance = [
         ["roomfreglance1", "SAVON FRAGRANCE DIFFUSER LIQUID"],
@@ -22,16 +22,16 @@ class roomfreglanceViewController: UIViewController, UICollectionViewDataSource,
         ["roomfreglance3", "デュオレディー ルームフレグランス"]
     ]
     
-//    let initialdata: [Bool] = [false,false,false]
+    let initialdata: [Int] = [0,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        // 何も入ってない時だけ入れる
-//        if ((saveData.object(forKey: "favorite") as? [Bool]) == nil) {
-//            //  お気に入り更新
-//            saveData.set(initialdata, forKey: "favorite")
-//        }
+        // 何も入ってない時だけ入れる
+        if ((saveData.object(forKey: "data") as? [Int]) == nil) {
+            //  お気に入り更新
+            saveData.set(initialdata, forKey: "data")
+        }
 //        
 //        // 今のお気に入りを取得
 //        data = saveData.object(forKey: "favorite") as! [Bool]
@@ -44,13 +44,18 @@ class roomfreglanceViewController: UIViewController, UICollectionViewDataSource,
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "CustomCellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CustomCell")
         
+    }
+    
+    override func viewDidLayoutSubviews() {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: collectionView.frame.width / 2 - 40 , height: 200)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
+        // cellのサイズを設定
+        layout.itemSize = CGSize(width: collectionView.frame.width / 2 - 20 , height: 250)
+        layout.sectionInset = UIEdgeInsets(top: 0,left: 10,bottom: 0,right: 10)
+        layout.minimumLineSpacing = 20
+        layout.minimumInteritemSpacing = 10
         collectionView.collectionViewLayout = layout
         
-        layout.scrollDirection = .horizontal
-        //collectionView.collectionViewLayout = collectionView
+        
     }
     
     
@@ -61,6 +66,7 @@ class roomfreglanceViewController: UIViewController, UICollectionViewDataSource,
     // cellの中身を設定するメソッド
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath as IndexPath) as! CustomCellCollectionViewCell
+        cell.setupCell(imageName: roomfreglance[indexPath.row][0], labelText: roomfreglance[indexPath.row][1])
         
 //        if let cell = cell as? CustomCellCollectionViewCell {
 //            cell.setupCell(imageName: roomfreglance[indexPath.row][0], labelText: roomfreglance[indexPath.row][1])
@@ -76,7 +82,6 @@ class roomfreglanceViewController: UIViewController, UICollectionViewDataSource,
         
 //        print(indexPath.row)
 //
-//        // ここ
 //
 //        if data[indexPath.row] == false {
 //            data[indexPath.row] = true

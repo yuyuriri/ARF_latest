@@ -30,7 +30,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 //    
 //    var data: [Int] = []
 //    
-//    var saveData: UserDefaults = UserDefaults.standard
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +96,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let tapLocation = sender.location(in: mainSceneView)
         
         let hitTest = sceneView.hitTest(tapLocation, types: .existingPlaneUsingExtent)
+        
         if !hitTest.isEmpty {
             
             //let interiorHeight = interior.boundingBox.max.y-interior.boundingBox.min.y
@@ -119,7 +120,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         //  node を作成
         let node = (scene.rootNode.childNode(withName: roomfreglance[index], recursively: false))!
-//        let node = (scene.rootNode.childNode(withName: "roomfreglance2", recursively: false))!
         
         // 現実世界の座標を取得
         let transform = hitTestResult.worldTransform

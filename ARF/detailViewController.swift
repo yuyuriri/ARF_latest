@@ -25,6 +25,8 @@ class detailViewController: UIViewController {
         URL(string: "https://francfranc.com/products/1105120217709")
     ]
     
+    let hitokoto = ["広めのお部屋にも、心地よい香りを広げます。", "優しいグリーンフローラルの心地よい香りのロングセラーアイテムです。", "シンプルで使いやすいけど胸がキュンキュンときめく永くご愛用いただける商品です。"]
+    
     
     
     
@@ -38,7 +40,8 @@ class detailViewController: UIViewController {
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var imageImage: UIImageView!
     @IBOutlet var URLButton: UIButton!
-    @IBOutlet var latestheartButton: UIButton!
+    @IBOutlet var heartButton: UIButton!
+    @IBOutlet var hitokotoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,18 +49,25 @@ class detailViewController: UIViewController {
         nameLabel.text = String(roomfreglance[index])
         priceLabel.text = String(price[index])
         imageImage.image = images[index]
+        hitokotoLabel.text = String(hitokoto[index])
         
         //      nameLabelとpriceLabelの文字サイズを自動変更する
         nameLabel.adjustsFontSizeToFitWidth = true
         priceLabel.adjustsFontSizeToFitWidth = true
+        hitokotoLabel.adjustsFontSizeToFitWidth = true
         
-        data = saveData.object(forKey: "data") as! [Int]
+        data = saveData.object(forKey: "data") as? [Int] ?? []
         
-        if data[index] == 1{
-            
-        latestheartButton.setImage(UIImage(systemName: "heart.fill"),for: .normal)
-            
+        print(data)
+        
+        if !data.isEmpty {
+            if data[index] == 1 {
+                
+            heartButton.setImage(UIImage(systemName: "heart.fill"),for: .normal)
+                
+            }
         }
+        
         
     }
     
@@ -79,16 +89,18 @@ class detailViewController: UIViewController {
             
             data[index] = 1
             
-            latestheartButton.setImage(UIImage(systemName: "heart.fill"),for: .normal)
+            heartButton.setImage(UIImage(systemName: "heart.fill"),for: .normal)
             
             
         }else if data[index] == 1 {
             
             data[index] = 0
             
-            latestheartButton.setImage(UIImage(systemName: "heart"),for: .normal)
+            heartButton.setImage(UIImage(systemName: "heart"),for: .normal)
             
         }
+            
+        
         
         saveData.set(data,forKey: "data")
     }

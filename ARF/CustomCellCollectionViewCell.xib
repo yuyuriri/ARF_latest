@@ -31,12 +31,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udf-eP-KWQ">
-                        <rect key="frame" x="309" y="0.0" width="51" height="35"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
-                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -54,14 +48,10 @@
             </constraints>
             <size key="customSize" width="738" height="936"/>
             <connections>
-                <outlet property="heartButton" destination="udf-eP-KWQ" id="LAs-b2-F7P"/>
-                <outlet property="imageView" destination="ee9-KF-DOO" id="1Cn-KB-EEo"/>
-                <outlet property="label" destination="CFc-cZ-oNg" id="5O2-jX-y8n"/>
+                <outlet property="imageView" destination="ee9-KF-DOO" id="rBg-GB-TfF"/>
+                <outlet property="label" destination="CFc-cZ-oNg" id="AqX-Mf-305"/>
             </connections>
             <point key="canvasLocation" x="429.00763358778624" y="168.3098591549296"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="heart" catalog="system" width="128" height="107"/>
-    </resources>
 </document>

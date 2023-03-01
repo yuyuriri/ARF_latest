@@ -13,7 +13,7 @@ class favoriteViewController: UIViewController, UITableViewDataSource {
     @IBOutlet var table: UITableView!
     
     
-    let roomfreglancedata = ["ルームフレグランス1", "ルームフレグランス2", "ルームフレグランス3"]
+    let roomfreglancedata = ["SAVON FRAGRANCE DIFFUSER LIQUID", "アルボル フレグランス ディフューザー", "デュオレディー ルームフレグランス"]
     
     var data: [Int] = []
     
@@ -23,6 +23,8 @@ class favoriteViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         table.dataSource = self
         
